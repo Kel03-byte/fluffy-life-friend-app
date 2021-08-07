@@ -15,6 +15,5 @@ export default function Single() {
             <p>Suitable in a home children under 8</p>
             <p>Suitable in a home children between 8 and 13</p>
          </Fragment>
-
     );
 }

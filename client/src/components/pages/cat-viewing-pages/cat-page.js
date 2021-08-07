@@ -41,10 +41,10 @@ export default function Cats() {
                 <Link to='/kittens'>Krazy Kittens!</Link>
             </button>
             <button>
-                <Link to='/adults'>Awesome Adults!</Link>
+                <Link to='/adults'>Awesome Adult Cats!</Link>
             </button>
             <button>
-                <Link to='/seniors'>Sweet Seniors!</Link>
+                <Link to='/seniors'>Sweet Senior Cats!</Link>
             </button>
             <Switch>
                 {routes.map((route, i) => (
