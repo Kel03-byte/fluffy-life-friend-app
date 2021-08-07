@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Socks",
+        "dob": "2004-11-25",
+        "sex": "Male",
+        "shy": true,
+        "otherCats": true,
+        "dogs": true,
+        "childU8": false,
+        "child8to13": true,
+        "specialReq": "Kidney disease"
+    },
+    {
+        "name": "Amy",
+        "dob": "2017-10-16",
+        "sex": "Female",
+        "shy": false,
+        "otherCats": false,
+        "dogs": false,
+        "childU8": true,
+        "child8to13": true
+    },
+    {
+        "name": "Thor",
+        "dob": "2016-04-03",
+        "sex": "Male",
+        "shy": true,
+        "otherCats": true,
+        "dogs": false,
+        "childU8": true,
+        "child8to13": true,
+        "specialReq": "Indoor Only"
+    },
+    {
+        "name": "Puddles",
+        "dob": "2012-01-13",
+        "sex": "Female",
+        "shy": false,
+        "otherCats": false,
+        "dogs": false,
+        "childU8": false,
+        "child8to13": false
+    }
+]
