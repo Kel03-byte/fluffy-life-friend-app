@@ -3,7 +3,9 @@
 import React, { Fragment, useState } from 'react';
 import { BrowserRouter as Route, Switch, Link } from 'react-router-dom';
 import AddCat from './add-cat-page';
-import { checkPassword, validateEmail } from '../../../utils/helpers';
+// import { checkPassword, validateEmail } from '../../../utils/helpers';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
 
 const routes = [
     {
@@ -25,10 +27,28 @@ function RouteWithSubRoutes(route) {
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
-    const [userName, setUserName] = useState('');
+    const [username, setUserName] = useState('');
     const [password, setPassword] = useState('')
 
-    const [errorMessage, setErrorMessage] = useState('');
+    // const [errorMessage, setErrorMessage] = useState('');
+
+    const [addUser, { error }] = useMutation(ADD_USER)
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            await addUser({
+                variables: {
+                    username: username,
+                    email: email,
+                    password: password,
+                },
+            })
+            console.log('Yay it worked!')
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
     const handleInputChange = (event) => {
         let target = event.target;
@@ -37,36 +57,21 @@ export default function SignUp() {
 
         if (inputType === 'email') {
             setEmail(inputValue);
-        } else if (inputType === 'userName') {
+        } else if (inputType === 'username') {
             setUserName(inputValue);
         } else if (inputType === 'password') {
             setPassword(inputValue)
         }
     };
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-        if (!validateEmail(email) || !userName) {
-            setErrorMessage('Fill out email and username please!');
-        } else if (!checkPassword(password)) {
-            setErrorMessage(
-                `Choose a more secure password for the account: ${userName}`
-            );
-        } else {
-            setErrorMessage(`Hello ${userName}`);
-        }
-        setUserName('');
-        setEmail('');
-        setPassword('');
-    };
     return (
         <Fragment>
             <div>Sign Up Page!</div>
             <div>
                 <form>
                     <input
-                        value={userName}
-                        name="userName"
+                        value={username}
+                        name="username"
                         onChange={handleInputChange}
                         type="text"
                         placeholder="username"
@@ -90,9 +95,9 @@ export default function SignUp() {
                         <Link to='/addcat'>Add A Cat!</Link>
                     </button>
                 </form>
-                {errorMessage && (
+                {error && (
                     <div>
-                        <p className="error-text">{errorMessage}</p>
+                        <p className="error-text">Please Enter Your Details</p>
                     </div>
                 )}
             </div>

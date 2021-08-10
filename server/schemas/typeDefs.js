@@ -11,7 +11,7 @@ const typeDefs = gql`
     type Cat {
         _id: ID
         name: String!
-        dob: Int!
+        dob: String!
         sex: String!
         shy: Boolean!
         otherCats: Boolean!
@@ -20,42 +20,20 @@ const typeDefs = gql`
         child8t13: Boolean!
         specialReq: String
     }
+    
+    type Auth {
+        token: ID!
+        user: User
+    }
 
     type Query {
         users: [User]
         cats: [Cat]
-        cat(id: ID!): Cat
     }
-
+    
     type Mutation {
-        addUser(userId: ID,
-            username: String!,
-            email: String!,
-            password: String!): User
-        
-        addCat(catId: ID,
-            name: String!,
-            dob: Int!,
-            sex: String!,
-            shy: Boolean!,
-            otherCats: Boolean!,
-            dogs: Boolean!,
-            childU8: Boolean!,
-            child8t13: Boolean!,
-            specialReq: String): Cat
-        
-        removeCat(catId: ID!): Cat
-
-        updateCat(catId: ID,
-            name: String!,
-            dob: Int!,
-            sex: String!,
-            shy: Boolean!,
-            otherCats: Boolean!,
-            dogs: Boolean!,
-            childU8: Boolean!,
-            child8t13: Boolean!,
-            specialReq: String): Cat
+        addUser(username: String!, email: String!, password: String!): User
+        loginUser(email: String!, password: String!): Auth
     }
 `;
 

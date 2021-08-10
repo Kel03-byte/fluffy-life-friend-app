@@ -1,19 +1,39 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const path = require('path');
+const db = require("./config/connection");
+const { typeDefs, resolvers } = require("./schemas");
+
+const PORT = process.env.PORT || 3000;
+
+const app = express();
+const server = new ApolloServer({ typeDefs, resolvers });
 
 async function startApolloServer() {
-  const typeDefs = require('./schemas/typeDefs')
-  const resolvers = require('./schemas/resolvers');
   
-  const server = new ApolloServer({ typeDefs, resolvers });
   await server.start();
 
-  const app = express();
-  server.applyMiddleware({ app });
+  server.applyMiddleware({ app: app });
 
-  await new Promise(resolve => app.listen({ port: 4000 }, resolve));
-  console.log(`🐱 Server ready at http://localhost:4000${server.graphqlPath}`);
-  return { server, app };
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
+
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  }
+
+  app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+
+  db.once("open", () => {
+    app.listen(PORT, () =>
+      console.log(`🐱 API server running on port ${PORT}!`)
+    );
+    console.log(
+      `🐱 Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+    );
+  });
 }
- 
+
 startApolloServer()

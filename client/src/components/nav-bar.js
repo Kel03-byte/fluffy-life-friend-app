@@ -1,14 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './pages/home-page'
-import Cats from './pages/cat-viewing-pages/cat-page'
-import SignIn from './pages/cat-worker-pages/sign-in-page'
-import SignUp from './pages/cat-worker-pages/sign-up-page';
-import AddCat from './pages/cat-worker-pages/add-cat-page';
-import Kitten from './pages/cat-viewing-pages/kitten-page';
-import Adult from './pages/cat-viewing-pages/adult-cat-page';
-import Senior from './pages/cat-viewing-pages/senior-cat-page';
-import Single from './pages/cat-viewing-pages/single-cat-page'
+import Home from '../pages/home-page'
+import Cats from '../pages/cat-viewing-pages/cat-page'
+import SignIn from '../pages/cat-worker-pages/sign-in-page'
+import SignUp from '../pages/cat-worker-pages/sign-up-page';
+import AddCat from '../pages/cat-worker-pages/add-cat-page';
+import Single from '../pages/cat-viewing-pages/single-cat-page'
 
 const routes = [
     {
@@ -30,18 +27,6 @@ const routes = [
     {
         path: "/addcat",
         component: AddCat,
-    },
-    {
-        path: "/kittens",
-        component: Kitten,
-    },
-    {
-        path: "/adults",
-        component: Adult,
-    },
-    {
-        path: "/seniors",
-        component: Senior,
     },
     {
         path: "/:id",
