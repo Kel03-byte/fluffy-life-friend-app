@@ -11,8 +11,8 @@ const resolvers = {
         cats: async () => {
             return await Cat.find({})
         },
-        cat: async  (_, { catId }) => {
-            return await Cat.findById({_id: catId})
+        cat: async (_, { catId }) => {
+            return await Cat.findById({ _id: catId })
         }
     },
     Mutation: {
@@ -35,9 +35,15 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addCat: async (_, {name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq}) => {
+        addCat: async (_, { name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq }) => {
             return Cat.create({ name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq })
         },
+        updateCat: async (_, { catId, name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq }, { new: true })
+        },
+        removeCat: async (_, { catId }) => {
+            return await Cat.findByIdAndDelete(catId);
+        }
     }
 }
 

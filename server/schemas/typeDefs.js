@@ -46,6 +46,19 @@ const typeDefs = gql`
             child8to13: String!
             specialReq: String!
         ): Cat
+        updateCat(
+            catId: ID!,
+            name: String!
+            dob: String!
+            sex: String!
+            shy: String!
+            otherCats: String!
+            dogs: String!
+            childU8: String!
+            child8to13: String!
+            specialReq: String!
+        ): Cat
+        removeCat(catId: ID!): Cat
     }
 `;
 
