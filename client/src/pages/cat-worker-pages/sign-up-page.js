@@ -3,7 +3,6 @@
 import React, { Fragment, useState } from 'react';
 import { BrowserRouter as Route, Switch, Link } from 'react-router-dom';
 import AddCat from './add-cat-page';
-// import { checkPassword, validateEmail } from '../../../utils/helpers';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 
@@ -29,8 +28,6 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('')
-
-    // const [errorMessage, setErrorMessage] = useState('');
 
     const [addUser, { error }] = useMutation(ADD_USER)
 

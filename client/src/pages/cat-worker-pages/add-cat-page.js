@@ -1,8 +1,13 @@
 // Add A Cat Page Component
 
 import React, { Fragment, useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_CAT } from '../../utils/mutations';
 
 export default function AddCat() {
+
+    const [addCat, { error }] = useMutation(ADD_CAT)
+
     const [catName, setCatName] = useState('');
     const [dob, setDob] = useState('')
     const [sex, setSex] = useState('')
@@ -10,10 +15,8 @@ export default function AddCat() {
     const [dogs, setDogs] = useState('')
     const [cats, setCats] = useState('')
     const [childU8, setChildU8] = useState('')
-    const [child8t13, setChild8t13] = useState('')
-    const [specReq, setSpecReq] = useState('')
-
-    const [errorMessage, setErrorMessage] = useState('');
+    const [child8to13, setChild8t13] = useState('')
+    const [specialReq, setSpecReq] = useState('')
 
     const handleInputChange = (event) => {
         let target = event.target;
@@ -36,19 +39,32 @@ export default function AddCat() {
             setChildU8(inputValue)
         } else if (inputType === 'child8t13') {
             setChild8t13(inputValue)
-        } else if (inputType === 'specReq') {
+        } else if (inputType === 'specialReq') {
             setSpecReq(inputValue)
         }
     };
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
-        // if (!catName || !dob || !cats || !dogs || !isShy || !child8t13 || !childU8 || !specReq) {
-        //     setErrorMessage('Please enter the info needed');
-        // } else {
-        //     setErrorMessage(`Hello ${catName}, dob: ${dob}, sex: ${sex}, you picked ${isShy} for being shy, you picked ${cats} for cats, you picked ${dogs} for dogs`);
-        // }
-        setErrorMessage(`Hello ${catName}, dob: ${dob}, sex: ${sex}, you picked ${isShy} for being shy, you picked ${cats} for cats, you picked ${dogs} for dogs`);
+        try {
+            await addCat({
+                variables: {
+                    name: catName,
+                    dob: dob,
+                    sex: sex,
+                    shy: isShy,
+                    dogs: dogs,
+                    otherCats: cats,
+                    childU8: childU8,
+                    child8to13: child8to13,
+                    specialReq: specialReq,
+
+                },
+            })
+            console.log('Yay it worked!')
+        } catch (error) {
+            console.log(error.message);
+        }
         setCatName('');
         setDob('');
         setCats('');
@@ -58,7 +74,6 @@ export default function AddCat() {
         setChildU8('');
         setSex('');
         setSpecReq('');
-        // setErrorMessage(``);
     };
 
     return (
@@ -71,74 +86,72 @@ export default function AddCat() {
                         name="catName"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="what is the name of the cat"
-                    /><br/>
+                        placeholder="What is the name of the cat"
+                    /><br />
                     <input
                         value={dob}
                         name="dob"
                         onChange={handleInputChange}
-                        type="date"
-                        placeholder="date of birth"
-                    /><br/>
+                        type="text"
+                        placeholder="Cat's date of birth DD/MM/YYYY"
+                    /><br />
                     <input
                         value={sex}
                         name="sex"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="what is the sex of the cat"
-                    /><br/>
+                        placeholder="What is the sex of the cat"
+                    /><br />
                     <input
                         value={isShy}
                         name="isShy"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="is the cat shy"
-                    /><br/>
+                        placeholder="Is the cat shy? Yes/No"
+                    /><br />
                     <input
                         value={cats}
                         name="cats"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="is the cat use to other cats"
-                    /><br/>
+                        placeholder="Is the cat use to other cats? Yes/No"
+                    /><br />
                     <input
                         value={dogs}
                         name="dogs"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="is the cat use to dogs"
-                    /><br/>
+                        placeholder="Is the cat use to dogs? Yes/No"
+                    /><br />
                     <input
                         value={childU8}
                         name="childU8"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="is the cat use to children under the age of 8"
-                    /><br/>
+                        placeholder="Is the cat use to children under the age of 8? Yes/No"
+                    /><br />
                     <input
-                        value={child8t13}
+                        value={child8to13}
                         name="child8t13"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="is the cat use to children between the ages of 8 and 13"
-                    /><br/>
+                        placeholder="Is the cat use to children between the ages of 8 and 13? Yes/No"
+                    /><br />
                     <input
-                        value={specReq}
-                        name="specReq"
+                        value={specialReq}
+                        name="specialReq"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="Any other special requirements"
+                        placeholder="Any other special requirements?"
                     />
-                </form><br/>
+                </form><br />
                 <button onClick={handleFormSubmit}>Submit</button>
-                {errorMessage && (
+                {error && (
                     <div>
-                        <p className="error-text">{errorMessage}</p>
+                        <p className="error-text">Please Enter The Cat's Details</p>
                     </div>
                 )}
             </div>
-
-            <p>Upload up to 4 pictures here! <button>Upload Images!</button></p>
 
             <button>Sign Out!</button>
         </Fragment>

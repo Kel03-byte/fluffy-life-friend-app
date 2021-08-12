@@ -11,6 +11,9 @@ const resolvers = {
         cats: async () => {
             return await Cat.find({})
         },
+        cat: async  (_, { catId }) => {
+            return await Cat.findById({_id: catId})
+        }
     },
     Mutation: {
         addUser: async (_, { username, email, password }) => {
@@ -31,7 +34,10 @@ const resolvers = {
 
             const token = signToken(user);
             return { token, user };
-        }
+        },
+        addCat: async (_, {name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq}) => {
+            return Cat.create({ name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq })
+        },
     }
 }
 

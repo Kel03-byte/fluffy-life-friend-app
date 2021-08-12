@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const CatList = ({cats}) => {
     return (
@@ -6,8 +7,10 @@ const CatList = ({cats}) => {
         { cats &&
             cats.map((cat) => (
                 <div key={cat._id}>
-                    <p>{cat.name}</p>
-                    <p>{cat.sex}</p>
+                    <p> Meet! {cat.name}</p>
+                    <Link to={`/${cat._id}`}>
+                    <button>Click!</button>
+                    </Link>
                 </div>
             ))}
     </div>

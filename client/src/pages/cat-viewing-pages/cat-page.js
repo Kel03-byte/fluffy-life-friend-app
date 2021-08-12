@@ -7,17 +7,18 @@ import CatList from '../../components/cat-list'
 
 const Cats = () => {
     const { loading, error, data } = useQuery(GET_CATS)
-    const cats = data.cats
     if (loading) {
-        return "Loading";
-    } if (error) {
+        return <div>Loading...</div>;
+    }
+    if(error) {
         console.error(error.message)
-    } else if (data.getCats)
+    }
     return (
         <main>
-            <CatList cats={cats}/>
+            <CatList cats={data.cats} />
         </main>
     )
+
 }
 
 export default Cats;

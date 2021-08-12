@@ -1,8 +1,9 @@
 import { gql } from '@apollo/client'
 
 export const GET_CATS = gql`
-query getCats {
+query cats {
     cats {
+        _id
         name
         sex
         dob
@@ -10,8 +11,26 @@ query getCats {
         otherCats
         dogs
         childU8
-        child8t13
+        child8to13
         specialReq
     }
 }
-`
+`;
+
+export const QUERY_SINGLE_CAT = gql`
+  query cat($catId: ID!) {
+    cat(catId: $catId) {
+      _id
+      name
+      dob
+      sex
+      shy
+      otherCats
+      dogs
+      childU8
+      child8to13
+      specialReq
+      }
+    }
+  
+`;

@@ -6,7 +6,7 @@ const catSchema = new Schema ({
         required: true,
     },
     dob: {
-        type: Date,
+        type: String,
         required: true,
     },
     sex: {
@@ -14,27 +14,28 @@ const catSchema = new Schema ({
         required: true,
     },
     shy: {
-        type: Boolean,
+        type: String,
         required: true,
     },
     otherCats:{
-        type: Boolean,
+        type: String,
         required: true,
     },
     dogs: {
-        type: Boolean,
+        type: String,
         required: true,
     },
     childU8: {
-        type: Boolean,
+        type: String,
         required: true,
     },
     child8to13: {
-        type: Boolean,
+        type: String,
         required: true,
     },
     specialReq: {
         type: String,
+        required: true,
     }
 });
 

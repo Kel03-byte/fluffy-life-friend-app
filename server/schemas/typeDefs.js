@@ -13,12 +13,12 @@ const typeDefs = gql`
         name: String!
         dob: String!
         sex: String!
-        shy: Boolean!
-        otherCats: Boolean!
-        dogs: Boolean!
-        childU8: Boolean!
-        child8t13: Boolean!
-        specialReq: String
+        shy: String!
+        otherCats: String!
+        dogs: String!
+        childU8: String!
+        child8to13: String!
+        specialReq: String!
     }
     
     type Auth {
@@ -29,11 +29,23 @@ const typeDefs = gql`
     type Query {
         users: [User]
         cats: [Cat]
+        cat(catId: ID!): Cat
     }
     
     type Mutation {
         addUser(username: String!, email: String!, password: String!): User
         loginUser(email: String!, password: String!): Auth
+        addCat(
+            name: String!
+            dob: String!
+            sex: String!
+            shy: String!
+            otherCats: String!
+            dogs: String!
+            childU8: String!
+            child8to13: String!
+            specialReq: String!
+        ): Cat
     }
 `;
 
