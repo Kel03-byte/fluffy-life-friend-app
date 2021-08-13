@@ -1,0 +1,42 @@
+#signup-page {
+    margin: 10px;
+}
+
+#signup-title {
+ font-size: 40px;
+ text-align: center;
+}
+
+#signup-form {
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}
+
+#signup-input {
+    border-radius: 10px;
+    padding: 5px;
+    width: 300px;
+    outline: none;
+    border: 1px black solid;
+}
+
+#signup-button {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(78, 74, 74);
+    color: white;
+}
+
+#signup-text {
+    font-size: 40px;
+    text-align: center;
+}
+
+#signup-link {
+    text-align: center;
+    font-size: 20px;
+}

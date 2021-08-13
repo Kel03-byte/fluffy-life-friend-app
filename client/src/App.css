@@ -1,0 +1,23 @@
+header {
+    text-align: center;
+    font-size: 60px;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+#nav-text {
+    text-decoration: none;
+}
+
+#nav-text:hover {
+    color: red;
+}

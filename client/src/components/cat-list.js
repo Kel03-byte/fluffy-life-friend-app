@@ -1,20 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+// List of Adoptable Cats Component
 
-const CatList = ({cats}) => {
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const CatList = ({ cats }) => {
     return (
-        <div>
-        { cats &&
-            cats.map((cat) => (
-                <div key={cat._id}>
-                    <p> Meet {cat.name}!</p>
-                    <Link to={`/${cat._id}`}>
-                    <p>More details ..</p>
-                    </Link><br/>
-                </div>
-            ))}
-    </div>
-    )
-}
+        <div id='cats-list'>
+            {cats &&
+                cats.map((cat) => (
+                    <div key={cat._id}>
+                        <p> Meet {cat.name}!</p>
+                        <p>Click for details about <Link to={`/${cat._id}`}>{cat.name}</Link></p><br />
+                    </div>
+                ))}
+        </div>
+    );
+};
 
 export default CatList;

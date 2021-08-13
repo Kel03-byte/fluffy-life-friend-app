@@ -2,11 +2,12 @@
 
 import React from 'react';
 
-export default function Header() {
+const Header = () => {
     return (
         <header>
-            <div id='main-header'>Fluffy Life Friends!</div>
+            <div>Fluffy Life Friends!</div>
         </header>
-
     );
-}
+};
+
+export default Header;

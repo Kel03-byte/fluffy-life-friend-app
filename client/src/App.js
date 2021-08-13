@@ -1,25 +1,62 @@
-// The beginning of React building the website
+// The Beginning of React building the website
+
+import './App.css';
+import Nav from './components/nav-bar'
+import Header from './components/header'
+import Cats from './pages/cat-viewing/cats/cats-page'
+import SignUp from './pages/cat-worker/sign-up/sign-up-page'
+import SignIn from './pages/cat-worker/sign-in/sign-in-page'
+import AddCat from './pages/cat-worker/add/add-cat-page'
+import Single from './pages/cat-viewing/single-cat/single-cat-page'
 
 import React from "react";
-import './App.css';
-import Header from './components/header';
-import Footer from './components/footer';
-import Main from './components/main-page'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+    ApolloClient,
+    ApolloProvider,
+    InMemoryCache,
+    createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import Home from './pages/home/home-page'
+import Footer from "./components/footer";
+
+const httpLink = createHttpLink({
+    uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem("id_token");
+
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : "",
+        },
+    };
+});
 
 const client = new ApolloClient({
-    uri: '/graphql',
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
-})
+});
 
 function App() {
     return (
         <ApolloProvider client={client}>
-            <div>
+            <Router>
                 <Header />
-                <Main />
+                <Nav />
+                <Switch>
+                    <Route exact path="/login" component={SignIn}></Route>
+                    <Route exact path="/signup" component={SignUp}></Route>
+                    <Route exact path="/cats" component={Cats}></Route>
+                    <Route exact path="/add" component={AddCat}></Route>
+                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/:id" component={Single}></Route>
+                </Switch>
                 <Footer />
-            </div>
+            </Router>
         </ApolloProvider>
     )
 }

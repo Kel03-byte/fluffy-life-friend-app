@@ -2,13 +2,12 @@
 
 import React from 'react';
 
-export default function Footer() {
-
+const Footer = () => {
     return (
         <footer>
-            <h4>
-                Made by Kellie "adopt, don't shop" @2021
-            </h4>
+            <div>Made by Kellie "adopt, don't shop" @2021</div>
         </footer>
-    )
-}
+    );
+};
+
+export default Footer;

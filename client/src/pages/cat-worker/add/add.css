@@ -1,0 +1,33 @@
+#add-page {
+    margin: 10px;
+}
+
+#add-title {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+#add-form {
+    margin: auto;
+    padding: auto;
+    max-width: 500px;
+}
+
+#add-input {
+    border-radius: 10px;
+    padding: 5px;
+    width: 300px;
+    outline: none;
+    border: 1px black solid;
+}
+
+#add-button {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(78, 74, 74);
+    color: white;
+}
