@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from '../pages/home-page'
-import Cats from '../pages/cat-viewing-pages/cat-page'
-import SignIn from '../pages/cat-worker-pages/sign-in-page'
+import Single from '../pages/cat-viewing-pages/single-cat-page';
+import Home from '../pages/home-page';
+import Cats from '../pages/cat-viewing-pages/cat-page';
+import SignIn from '../pages/cat-worker-pages/sign-in-page';
 import SignUp from '../pages/cat-worker-pages/sign-up-page';
 import AddCat from '../pages/cat-worker-pages/add-cat-page';
-import Single from '../pages/cat-viewing-pages/single-cat-page'
+import EditCat from '../pages/cat-worker-pages/edit-cat-page';
 
 const routes = [
     {
@@ -25,8 +26,12 @@ const routes = [
         component: SignUp,
     },
     {
-        path: "/addcat",
+        path: "/add",
         component: AddCat,
+    },
+    {
+        path: "/edit",
+        component: EditCat
     },
     {
         path: "/:id",

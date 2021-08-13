@@ -1,13 +1,19 @@
-// Sign In Page Component
-
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils//mutations';
+import auth from '../../utils/auth';
 import { BrowserRouter as Route, Switch, Link } from 'react-router-dom';
-import AddCat from './add-cat-page';
+import AddCat from '../cat-worker-pages/add-cat-page'
+import EditCat from './edit-cat-page';
 
 const routes = [
     {
-        path: "/addcat",
+        path: "/add",
         component: AddCat,
+    },
+    {
+        path: "/edit",
+        component: EditCat,
     },
 ];
 
@@ -22,71 +28,87 @@ function RouteWithSubRoutes(route) {
     );
 }
 
-export default function SignIn() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('')
+const SignIn = (props) => {
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [login, { error, data }] = useMutation(LOGIN_USER);
 
-    const [errorMessage, setErrorMessage] = useState('');
+    // update state based on form input changes
+    const handleChange = (event) => {
+        const { name, value } = event.target;
 
-    const handleInputChange = (event) => {
-        let target = event.target;
-        let inputType = target.name;
-        let inputValue = target.value;
-
-        if (inputType === 'email') {
-            setEmail(inputValue);
-        } else if (inputType === 'password') {
-            setPassword(inputValue)
-        }
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
     };
 
-    const handleFormSubmit = (event) => {
+    // submit form
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
-        if (!email || !password) {
-            setErrorMessage('Please enter your email and password to sign in!');
-        } else {
-            setErrorMessage(`Hello ${email}`);
+        try {
+            const { data } = await login({
+                variables: { ...formState },
+            });
+
+            auth.login(data.login.token);
+        } catch (error) {
+            console.error(error.message);
         }
-        setEmail('');
-        setPassword('');
+
+        setFormState({
+            email: '',
+            password: '',
+        });
     };
 
     return (
-        <Fragment>
-            <div>Sign In Page!</div>
+        <main>
             <div>
-                <form>
-                    <input
-                        value={email}
-                        name="email"
-                        onChange={handleInputChange}
-                        type="email"
-                        placeholder="email"
-                    />
-                    <input
-                        value={password}
-                        name="password"
-                        onChange={handleInputChange}
-                        type="password"
-                        placeholder="password"
-                    />
-                    <button onClick={handleFormSubmit}>Submit</button>
-                    <button>
-                        <Link to='/addcat'>Add A Cat!</Link>
-                    </button>
-                </form>
-                {errorMessage && (
-                    <div>
-                        <p className="error-text">{errorMessage}</p>
-                    </div>
-                )}
+                <div>
+                    {data ? (
+                        <p>
+                            Welcome! You can:<br/>
+                            
+                                <Link to='/add'>Add A Cat!</Link><br/>
+                            
+                            or<br/>
+                            
+                                <Link to='/edit'>Edit A Cat!</Link>
+                            
+                        </p>
+                    ) : (
+                        <form>
+                            <input
+                                placeholder="Your email"
+                                name="email"
+                                type="email"
+                                value={formState.email}
+                                onChange={handleChange}
+                            />
+                            <input
+                                placeholder="Your password"
+                                name="password"
+                                type="password"
+                                value={formState.password}
+                                onChange={handleChange}
+                            />
+                            <button onClick={handleFormSubmit}>Submit</button>
+                        </form>
+                    )}
+                    {error && (
+                        <div>
+                            {error.message}
+                        </div>
+                    )}
+                </div>
             </div>
-
             <Switch>
                 {routes.map((route, i) => (
                     <RouteWithSubRoutes key={i} {...route} />
                 ))}
             </Switch>
-        </Fragment>
+        </main>
     );
-}
+};
+
+export default SignIn;

@@ -7,10 +7,10 @@ const CatList = ({cats}) => {
         { cats &&
             cats.map((cat) => (
                 <div key={cat._id}>
-                    <p> Meet! {cat.name}</p>
+                    <p> Meet {cat.name}!</p>
                     <Link to={`/${cat._id}`}>
-                    <button>Click!</button>
-                    </Link>
+                    <p>More details ..</p>
+                    </Link><br/>
                 </div>
             ))}
     </div>

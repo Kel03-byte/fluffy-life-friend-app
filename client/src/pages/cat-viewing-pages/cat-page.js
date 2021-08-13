@@ -1,24 +1,23 @@
 // Cat Veiwing Page Component
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_CATS } from '../../utils/queries';
-import CatList from '../../components/cat-list'
+import CatList from '../../components/cat-list';
 
 const Cats = () => {
     const { loading, error, data } = useQuery(GET_CATS)
     if (loading) {
         return <div>Loading...</div>;
     }
-    if(error) {
+    if (error) {
         console.error(error.message)
     }
     return (
-        <main>
+        <Fragment>
             <CatList cats={data.cats} />
-        </main>
+        </Fragment>
     )
-
 }
 
 export default Cats;

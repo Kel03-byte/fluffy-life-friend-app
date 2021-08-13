@@ -5,12 +5,17 @@ import { BrowserRouter as Route, Switch, Link } from 'react-router-dom';
 import AddCat from './add-cat-page';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
+import EditCat from './edit-cat-page'
 
 const routes = [
     {
-        path: "/addcat",
+        path: "/add",
         component: AddCat,
     },
+    {
+        path: "/edit",
+        component: EditCat,
+    }
 ];
 
 function RouteWithSubRoutes(route) {
@@ -28,6 +33,7 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('')
+
 
     const [addUser, { error }] = useMutation(ADD_USER)
 
@@ -89,12 +95,15 @@ export default function SignUp() {
                     />
                     <button onClick={handleFormSubmit}>Submit</button>
                     <button>
-                        <Link to='/addcat'>Add A Cat!</Link>
+                        <Link to='/add'>Add A Cat!</Link>
+                    </button>
+                    <button>
+                        <Link to='/edit'>Edit A Cat!</Link>
                     </button>
                 </form>
                 {error && (
                     <div>
-                        <p className="error-text">Please Enter Your Details</p>
+                        <p>Please Enter Your Details</p>
                     </div>
                 )}
             </div>

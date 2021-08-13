@@ -2,11 +2,11 @@
     {
         "username": "ACARG",
         "email": "acarg@example.com",
-        "password": "1234567"
+        "password": "ABCD1234"
     },
     {
         "username": "Kellie",
         "email": "kellie@example.com",
-        "password": "1234567"
+        "password": "ABCD1234"
     }
 ]
