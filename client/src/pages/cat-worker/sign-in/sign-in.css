@@ -1,5 +1,8 @@
 #login-page {
+    min-height: 600px;
     margin: 10px;
+    color: white;
+    font-weight: bold;
 }
 
 #login-title {
@@ -14,7 +17,7 @@
     padding: auto;
 }
 
-#login-input {
+.login-input {
     border-radius: 10px;
     padding: 5px;
     width: 300px;
@@ -30,6 +33,13 @@
     border: none;
     background-color: rgb(78, 74, 74);
     color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#login-button:hover {
+    background-color:  rgba(175, 222, 220, 1);
+    cursor: pointer;
 }
 
 #login-text {

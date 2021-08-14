@@ -34,7 +34,7 @@
     },
     {
         "name": "Puddles",
-        "dob": "2012-01-13",
+        "dob": "13-01-2012",
         "sex": "Female",
         "shy": "No",
         "otherCats": "No",
@@ -42,5 +42,27 @@
         "childU8": "No",
         "child8to13": "No",
         "specialReq": "None"
+    },
+    {
+        "name": "Timmy",
+        "dob": "31/03/21",
+        "sex": "Male",
+        "shy": "Yes",
+        "otherCats": "Yes",
+        "dogs": "No",
+        "childU8": "No",
+        "child8to13": "Yes",
+        "specialReq": "Smooch bug!"
+    },
+    {
+        "name": "Midnight",
+        "dob": "02/02/21",
+        "sex": "Female",
+        "shy": "No",
+        "otherCats": "Yes",
+        "dogs": "Yes",
+        "childU8": "Yes",
+        "child8to13": "Yes",
+        "specialReq": "Real little character"
     }
 ]

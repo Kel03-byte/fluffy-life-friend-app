@@ -8,6 +8,9 @@ import SignUp from './pages/cat-worker/sign-up/sign-up-page'
 import SignIn from './pages/cat-worker/sign-in/sign-in-page'
 import AddCat from './pages/cat-worker/add/add-cat-page'
 import Single from './pages/cat-viewing/single-cat/single-cat-page'
+import EditPage from './pages/cat-worker/edit/edit-cats/edit-page'
+import EditCat from './pages/cat-worker/edit/single-cat/edit-cat'
+import Resource from './pages/resources/resource'
 
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -48,11 +51,14 @@ function App() {
                 <Header />
                 <Nav />
                 <Switch>
+                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/cats" component={Cats}></Route>
                     <Route exact path="/login" component={SignIn}></Route>
                     <Route exact path="/signup" component={SignUp}></Route>
-                    <Route exact path="/cats" component={Cats}></Route>
                     <Route exact path="/add" component={AddCat}></Route>
-                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/edit" component={EditPage}></Route>
+                    <Route exact path="/resources" component={Resource}></Route>
+                    <Route exact path="/edit/:id" component={EditCat}></Route>
                     <Route exact path="/:id" component={Single}></Route>
                 </Switch>
                 <Footer />

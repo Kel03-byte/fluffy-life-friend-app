@@ -1,5 +1,8 @@
 #add-page {
+    min-height: 600px;
     margin: 10px;
+    color: white;
+    font-weight: bold;
 }
 
 #add-title {
@@ -30,4 +33,9 @@
     border: none;
     background-color: rgb(78, 74, 74);
     color: white;
+}
+
+#add-button:hover {
+    background-color:  rgba(175, 222, 220, 1);
+    cursor: pointer;
 }

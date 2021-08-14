@@ -3,18 +3,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CatList = ({ cats }) => {
+const EditList = ({ cats }) => {
     return (
-        <div id='cats-list'>
+        <div id='edit-list'>
             {cats &&
                 cats.map((cat) => (
                     <div key={cat._id}>
-                        <p> Meet {cat.name}!</p>
-                        <p>Click for details about <Link id='nav-text' to={`/${cat._id}`}>{cat.name}</Link></p><br />
+                        <p>{cat.name}!</p>
+                        <p ><Link id='nav-text'to={`/edit/${cat._id}`}>Edit</Link> or Delete</p><br />
                     </div>
                 ))}
         </div>
     );
 };
 
-export default CatList;
+export default EditList;

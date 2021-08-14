@@ -180,7 +180,7 @@ export default function AddCat() {
                                 placeholder="Any other special needs?"
                             />
                         </div><br />
-                    <button id='add-button' onClick={handleFormSubmit}>Submit</button>
+                        <button id='add-button' onClick={handleFormSubmit}>Submit</button>
                     </form><br />
                     {error && (
                         <div>
@@ -188,7 +188,7 @@ export default function AddCat() {
                         </div>
                     )}
                 </div>
-            </div><br/>
+            </div><br />
         </Fragment>
     );
 };

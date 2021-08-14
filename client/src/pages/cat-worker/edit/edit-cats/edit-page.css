@@ -1,0 +1,17 @@
+#edit-page {
+    min-height: 600px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#edit-title {
+    font-size: 30px;
+    text-align: center;
+}
+
+#edit-list {
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}

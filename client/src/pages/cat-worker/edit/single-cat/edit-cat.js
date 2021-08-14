@@ -1,12 +1,12 @@
-// Single Cat Page Component
+// Edit A Single Cat Page
 
 import React, { Fragment } from 'react';
 import { useParams } from 'react-router';
 import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_CAT } from '../../../utils/queries';
-import './single-cat.css'
+import { QUERY_SINGLE_CAT } from '../../../../utils/queries';
+import './edit-cat.css'
 
-export default function Single() {
+const EditCat = () => {
     let { id } = useParams()
     const catId = id
     const { loading, error, data } = useQuery(QUERY_SINGLE_CAT, {
@@ -20,8 +20,8 @@ export default function Single() {
     }
     return (
         <Fragment>
-            <div id='cat-page'><br/>
-                <p id='cat-title'>Meet {data.cat.name}!</p>
+            <div id='edit-cat-page'><br/>
+                <p id='edit-cat-title'>Edit {data.cat.name}'s details!</p>
                 <p>DOB: {data.cat.dob}</p>
                 <p>Sex: {data.cat.sex}</p><br/>
                 <p>Use to other Cats? </p>
@@ -38,3 +38,5 @@ export default function Single() {
         </Fragment>
     );
 };
+
+export default EditCat;

@@ -1,4 +1,4 @@
-#cat-page {
+#edit-cat-page {
     padding: auto;
     margin: auto;
     text-align: center;
@@ -8,6 +8,6 @@
     font-weight: bold;
 }
 
-#cat-title {
+#edit-cat-title {
     font-size: 30px;
 }
