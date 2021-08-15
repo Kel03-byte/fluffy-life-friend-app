@@ -101,20 +101,10 @@ mutation updateCat(
         }
 }
 `
-export const DELETE_CAT = gql`
+export const REMOVE_CAT = gql`
 mutation removeCat($catId: ID!) {
   removeCat(catId: $catId) {
     _id
-    name
-    dob
-    sex
-    shy
-    otherCats
-    dogs
-    childU8
-    child8to13
-    specialReq
     }
-  }
-
+}
 `;

@@ -1,47 +1,51 @@
 [
     {
-        "name": "Socks",
-        "dob": "25-11-2014",
+        "name": "Sooty",
+        "dob": "13/06/201",
         "sex": "Male",
-        "shy": "Yes",
-        "otherCats": "Yes",
-        "dogs": "Yes",
+        "shy": "No",
+        "otherCats": "No",
+        "dogs": "No",
         "childU8": "No",
-        "child8to13": "Yes",
-        "specialReq": "Kidney disease"
+        "child8to13": "No",
+        "specialReq": "Ladies only man!",
+        "image":"/assets/images/sooty.jpg"
     },
     {
         "name": "Amy",
-        "dob": "16-10-2017",
+        "dob": "16/10/2017",
         "sex": "Female",
         "shy": "No",
         "otherCats": "No",
         "dogs": "No",
         "childU8": "Yes",
         "child8to13": "Yes",
-        "specialReq": "None"
+        "specialReq": "None",
+        "image":"/assets/images/amy.jpg"
     },
     {
         "name": "Thor",
-        "dob": "03-04-2016",
+        "dob": "03/04/2016",
         "sex": "Male",
         "shy": "Yes",
         "otherCats": "Yes",
         "dogs": "No",
         "childU8": "Yes",
         "child8to13": "Yes",
-        "specialReq": "Indoor Only"
+        "specialReq": "Indoor Only",
+        "image":"/assets/images/thor.jpg"
     },
     {
         "name": "Puddles",
-        "dob": "13-01-2012",
+        "dob": "13/01/2012",
         "sex": "Female",
         "shy": "No",
         "otherCats": "No",
         "dogs": "No",
         "childU8": "No",
         "child8to13": "No",
-        "specialReq": "None"
+        "specialReq": "None",
+        "image": "/assets/images/puddles.jpg"
     },
     {
         "name": "Timmy",
@@ -52,7 +56,8 @@
         "dogs": "No",
         "childU8": "No",
         "child8to13": "Yes",
-        "specialReq": "Smooch bug!"
+        "specialReq": "Smooch bug!",
+        "image":"/assets/images/timmy.jpg"
     },
     {
         "name": "Midnight",
@@ -63,6 +68,7 @@
         "dogs": "Yes",
         "childU8": "Yes",
         "child8to13": "Yes",
-        "specialReq": "Real little character"
+        "specialReq": "Real little character",
+        "image":"/assets/images/midnight.jpg"
     }
 ]

@@ -36,6 +36,9 @@ const catSchema = new Schema ({
     specialReq: {
         type: String,
         required: true,
+    },
+    image: {
+        type: String,
     }
 });
 

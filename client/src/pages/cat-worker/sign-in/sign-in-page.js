@@ -36,7 +36,6 @@ const SignIn = () => {
     };
 
     return (
-
         <Fragment>
             <div id='login-page'>
                 <div id='login-title'>Sign In</div><br />

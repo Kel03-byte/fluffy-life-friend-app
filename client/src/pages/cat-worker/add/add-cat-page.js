@@ -182,11 +182,7 @@ export default function AddCat() {
                         </div><br />
                         <button id='add-button' onClick={handleFormSubmit}>Submit</button>
                     </form><br />
-                    {error && (
-                        <div>
-                            <p className="error-text">Please Enter The Cat's Details</p>
-                        </div>
-                    )}
+                    {error && <div>Please Enter The Cat's Details</div>}
                 </div>
             </div><br />
         </Fragment>
