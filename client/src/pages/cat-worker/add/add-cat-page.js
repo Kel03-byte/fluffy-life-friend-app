@@ -7,7 +7,7 @@ import './add.css';
 
 export default function AddCat() {
 
-    const [addCat, { error }] = useMutation(ADD_CAT)
+    const [addCat, { data, error }] = useMutation(ADD_CAT)
 
     const [catName, setCatName] = useState('');
     const [dob, setDob] = useState('');
@@ -74,9 +74,11 @@ export default function AddCat() {
         setSex('');
         setSpecReq('');
     };
-
+    
     return (
         <Fragment>
+            {data && <div id='add-message'>The Cat's details have been added!</div>}
+            {error && <div id='add-message'>Please Enter The Cat's Details</div>}
             <div id='add-page'>
                 <div id='add-title'>Add details of the cat to the system</div>
                 <div>
@@ -182,7 +184,6 @@ export default function AddCat() {
                         </div><br />
                         <button id='add-button' onClick={handleFormSubmit}>Submit</button>
                     </form><br />
-                    {error && <div>Please Enter The Cat's Details</div>}
                 </div>
             </div><br />
         </Fragment>

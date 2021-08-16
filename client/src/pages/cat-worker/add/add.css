@@ -25,6 +25,11 @@
     border: 1px black solid;
 }
 
+#add-message {
+    text-align: center;
+    font-size: 20px;
+}
+
 #add-button {
     height: 30px;
     width: 200px;
