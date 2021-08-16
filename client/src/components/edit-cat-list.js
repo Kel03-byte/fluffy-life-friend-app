@@ -25,7 +25,7 @@ const EditList = ({ cats }) => {
                 cats.map((cat) => (
                     <div key={cat._id}>
                         <p>{cat.name}!</p>
-                        <button><Link id='nav-text' to={`/edit/${cat._id}`}>Edit</Link></button>
+                        <button id='edit-button'><Link id='nav-text' to={`/edit/${cat._id}`}>Edit</Link></button>
                         {/* <button onClick={removeCatProfile}>Delete</button> */}
                         <br />
                     </div>

@@ -11,3 +11,20 @@
 #edit-cat-title {
     font-size: 30px;
 }
+
+#edit-button {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(78, 74, 74);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#edit-button:hover {
+    background-color:  rgba(175, 222, 220, 1);
+    cursor: pointer;
+}
