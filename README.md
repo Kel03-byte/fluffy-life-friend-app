@@ -8,6 +8,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Links](#links)
+- [Resources](#resources)
 - [Screenshots](#screenshots)
 
 ## Description
@@ -42,6 +43,13 @@ Otherwise just click on the 'deployed website' link in the Links Section to use 
 
 * gitHub: https://github.com/Kel03-byte/fluffy-life-friend-app
 * Deployed website: https://fluffy-life-friends.herokuapp.com/
+
+## Resources
+
+* [Press Release](https://docs.google.com/document/d/1_YDwRyGK-HfiYP21BZEY76_JgJwDGi5KjhD2B0wYH8Y/edit)
+* [User Story Map](https://miro.com/app/board/o9J_l4WQGZU=/)
+* [Presentation Slide](https://docs.google.com/presentation/d/1-d7KW7Ukvo6mWeEYrSVWGbmwx9YhkAO2qaJadW2Q7sc/edit#slide=id.ge9da45e10a_0_3)
+* [Presentation Speech](https://docs.google.com/document/d/15VxTWW9Q8S9dqSRC0XJNoaKpFVTqNDlKDZXQFDytz2c/edit)
 
 ## Screenshots
 
