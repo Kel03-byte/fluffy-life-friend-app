@@ -10,13 +10,13 @@ function Nav() {
             return (
                 <ul>
                     <li>
-                        <Link to='/add' id='nav-text'>Add</Link>
+                        <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
                     </li>
                     <li>
-                        <Link to='/edit' id='nav-text'>Edit</Link>
+                        <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
                     </li>
                     <li>
-                        <a href='/' onClick={() => Auth.logout()} id='nav-text'>Sign Out</a>
+                        <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
                     </li>
                 </ul>
             )
@@ -24,19 +24,19 @@ function Nav() {
             return (
                 <ul>
                     <li>
-                        <Link to='/' id='nav-text'>Home</Link>
+                        <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
                     </li>
                     <li>
-                        <Link to='/cats' id='nav-text'>Cats</Link>
+                        <button className='nav-button'><Link to='/cats' className='nav-text'>Cats</Link></button>
                     </li>
                     <li>
-                        <Link to='/resources' id='nav-text'>Resources</Link>
+                        <button className='nav-button'><Link to='/resources' className='nav-text'>Resources</Link></button>
                     </li>
                     <li >
-                        <Link to='/login' id='nav-text'>Sign In</Link>
+                        <button className='nav-button'><Link to='/login' className='nav-text'>Sign In</Link></button>
                     </li>
                     <li>
-                        <Link to='/signup' id='nav-text'>Sign Up</Link>
+                        <button className='nav-button'><Link to='/signup' className='nav-text'>Sign Up</Link></button>
                     </li>
                 </ul>
             );
@@ -45,29 +45,6 @@ function Nav() {
     return (
         <nav>
             {navBar()}
-            {/* <ul>
-                <li>
-                    <Link to='/add' id='nav-text'>Add</Link>
-                </li>
-                <li>
-                    <Link to='/edit' id='nav-text'>Edit</Link>
-                </li>
-                <li>
-                    <Link to='/' id='nav-text'>Home</Link>
-                </li>
-                <li>
-                    <Link to='/cats' id='nav-text'>Cats</Link>
-                </li>
-                <li>
-                    <Link to='/resources' id='nav-text'>Resources</Link>
-                </li>
-                <li >
-                    <Link to='/login' id='nav-text'>Sign In</Link>
-                </li>
-                <li>
-                    <Link to='/signup' id='nav-text'>Sign Up</Link>
-                </li>
-            </ul> */}
         </nav>
     );
 };

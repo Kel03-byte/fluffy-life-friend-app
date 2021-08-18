@@ -16,17 +16,40 @@ footer {
 }
 
 ul {
-    display: flex;
+    text-align: center;
     list-style: none;
-    justify-content: space-around;
 }
 
-#nav-text {
+.nav-text {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
-#nav-text:hover {
-    color: rgba(175, 222, 220, 1);
+.nav-button {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(78, 74, 74);
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.nav-button:hover {
+    background-color:  rgba(175, 222, 220, 1);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-button {
+        width: 120px;
+    }
 }
