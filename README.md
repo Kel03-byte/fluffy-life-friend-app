@@ -29,7 +29,7 @@ To Install this app onto your own computer:
 * Open up your terminal and change into the cloned folder
 * Type "npm i" to install the dependancies
 * If you would like to start with some data then type 'npm run seed' and watch the cute cats  be added to the MongoDB database
-* Then lastly type "yarn start" or 'npm start' to start the site!
+* Then lastly type 'npm run develop' to start the site!
 
 Otherwise just click on the 'deployed website' link in the Links Section to use the app!
 
