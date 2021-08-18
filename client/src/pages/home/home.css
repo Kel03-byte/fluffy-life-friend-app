@@ -33,6 +33,11 @@
     display: none;
 }
 
+#home-pic-five {
+    position: relative;
+    left: 60px;
+}
+
 @media screen and (min-width: 700px) {
     #home-pic-one {
         display: block;
@@ -40,7 +45,7 @@
         height: 120px;
         position: absolute;
         top: 220px;
-        left: 5%;
+        left: 4%;
         transform: rotate(20deg);
     }
 
@@ -49,8 +54,8 @@
         width: 120px;
         height: 120px;
         position: absolute;
-        bottom: 50px;
-        left: 8%;
+        top: 450px;
+        left: 4%;
         transform: rotate(-10deg);
     }
 
@@ -59,7 +64,7 @@
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 350px;
+        top: 220px;
         right: 5%;
         transform: rotate(-10deg);
     }
@@ -69,8 +74,8 @@
         width: 120px;
         height: 120px;
         position: absolute;
-        bottom: 50px;
-        right: 30%;
+        top: 450px;
+        right: 5%;
         transform: rotate(10deg);
     }
 }
@@ -85,6 +90,7 @@
         display: block;
         width: 200px;
         height: 200px;
+        top: 500px;
     }
 
     #home-pic-three {
@@ -97,5 +103,6 @@
         right: 10%;
         width: 200px;
         height: 200px;
+        top: 500px;
     }
 }

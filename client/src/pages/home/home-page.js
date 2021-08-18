@@ -6,16 +6,17 @@ import Img1 from '../../assets/images/1.jpg';
 import Img2 from '../../assets/images/2.jpg';
 import Img3 from '../../assets/images/3.jpg';
 import Img4 from '../../assets/images/4.jpg';
+import Img5 from '../../assets/images/5.png';
 
 export default function Home() {
     return (
         <Fragment>
             <div id='home-page'>
                 <div id='home-title'>Welcome!</div>
-                <img id='home-pic-one' alt='cat lying on its back'src={Img1}></img>
-                <img id='home-pic-two' alt='cat laying on lounge'src={Img2}></img>
-                <img id='home-pic-three' alt='cat laying on bed'src={Img3}></img>
-                <img id='home-pic-four' alt='three kittens on a cat scratcher'src={Img4}></img>
+                <img id='home-pic-one' alt='cat lying on its back' src={Img1}></img>
+                <img id='home-pic-two' alt='cat laying on lounge' src={Img2}></img>
+                <img id='home-pic-three' alt='cat laying on bed' src={Img3}></img>
+                <img id='home-pic-four' alt='three kittens on a cat scratcher' src={Img4}></img>
                 <div id='home-text'>
                     <p>Here at Fluffy Life Friends, we believe that
                         our voiceless friends deserve a wonderful, healthy and happy life
@@ -25,6 +26,7 @@ export default function Home() {
                     </p>
                     <br />
                     <p>If you are a Cat Shelter Worker then you can log in or sign up to the site through the links above!</p>
+                    <img id='home-pic-five' alt='black cat icon' src={Img5}></img>
                 </div>
             </div>
         </Fragment>

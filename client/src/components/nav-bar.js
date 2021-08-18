@@ -13,10 +13,13 @@ function Nav() {
                         <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
                     </li>
                     <li>
-                        <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
+                        <button className='nav-button'><Link to='/add' className='nav-text'>Add</Link></button>
                     </li>
                     <li>
-                        <button className='nav-button'><Link to='/' className='nav-text'>Home</Link></button>
+                        <button className='nav-button'><Link to='/edit' className='nav-text'>Edit</Link></button>
+                    </li>
+                    <li>
+                        <button className='nav-button'><a className='nav-text' href='/' onClick={() => Auth.logout()}>Sign Out</a></button>
                     </li>
                 </ul>
             )
