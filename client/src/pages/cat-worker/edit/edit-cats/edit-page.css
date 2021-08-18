@@ -15,3 +15,25 @@
     padding: auto;
     margin: auto;
 }
+
+#list-button {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(78, 74, 74);
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
+}
+
+#list-button:hover {
+    background-color:  rgba(175, 222, 220, 1);
+    cursor: pointer;
+}
+
+.list-text {
+    color: white;
+    text-decoration: none;
+}
