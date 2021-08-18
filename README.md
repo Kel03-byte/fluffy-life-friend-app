@@ -6,6 +6,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
+- [Usage](#usage)
 - [Links](#links)
 - [Screenshots](#screenshots)
 
@@ -32,27 +33,35 @@ To Install this app onto your own computer:
 
 Otherwise just click on the 'deployed website' link in the Links Section to use the app!
 
+## Usage
+
+* People can view a list of Adpotable Cats and their details by clicking on the "Cats" button!
+* Shelter Workers can sign up/in to add or delete a cat from the database!
+
 ## Links
 
-* gitHub: https://github.com/Kel03-byte/react-profile
-* Deployed website: https://kel03-byte.github.io/react-profile/
+* gitHub: https://github.com/Kel03-byte/fluffy-life-friend-app
+* Deployed website: https://fluffy-life-friends.herokuapp.com/
 
 ## Screenshots
 
 Home Page
-![Home Page]()
+![Home Page](assets/home.png)
 
 Cats Page
-![Cats Page]()
+![Cats Page](assets/cats.png)
 
-Add A Cat Page
-![Add A Cat Page]()
+Cat Details Page
+![Cat Details Page](assets/details.png)
 
 Resource Page
-![Resource Page]()
+![Resource Page](assets/resources.png)
 
 Sign Up Page
-![Sign Up Page]()
+![Sign Up Page](assets/signup.png)
 
 Sign In Page
-![Sign In Page]()
+![Sign In Page](assets/login.png)
+
+Add A Cat Page
+![Add A Cat Page](assets/add.png)
