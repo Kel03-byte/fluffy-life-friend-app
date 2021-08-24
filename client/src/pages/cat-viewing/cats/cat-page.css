@@ -16,6 +16,11 @@
     margin: auto;
 }
 
+img {
+    width: 500px;
+    height: 300px;
+}
+
 #nav-text {
     text-decoration: none;
     color: rgb(78, 74, 74);

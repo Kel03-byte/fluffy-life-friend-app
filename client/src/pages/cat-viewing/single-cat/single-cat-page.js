@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_CAT } from '../../../utils/queries';
 import './single-cat.css'
 
-export default function Single() {
+const Single = () => {
     let { id } = useParams()
     const catId = id
     const { loading, error, data } = useQuery(QUERY_SINGLE_CAT, {
@@ -22,6 +22,7 @@ export default function Single() {
         <Fragment>
             <div id='cat-page'><br />
                 <p id='cat-title'>Meet {data.cat.name}!</p>
+                <img src={require(`../../../assets/cat-pics/${data.cat.image}`).default} alt={data.cat.image}></img>
                 <p>DOB: {data.cat.dob}</p>
                 <p>Sex: {data.cat.sex}</p><br />
                 <p>Use to other Cats? </p>
@@ -44,3 +45,5 @@ export default function Single() {
         </Fragment>
     );
 };
+
+export default Single;
