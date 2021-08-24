@@ -38,7 +38,7 @@ const SignUp = () => {
     return (
         <Fragment>
             <div id='signup-page'>
-                <div id='signup-title'>Sign up to the site</div><br />
+                <div id='signup-title'>Register for the site</div><br />
                 <form id='signup-form'>
                     <div>
                         <label>Enter a User Name</label><br />

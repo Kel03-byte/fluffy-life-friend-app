@@ -113,23 +113,17 @@ const EditCat = () => {
                         {error && <div>{error.message}</div>}
                         {removeError && <div>{removeError.message}</div>}
                         {removeData && <div>The cat has been succesfully removed!</div>}
-                        {dobData && <div>The data has been succesfully updated!</div>}
-                        {sexData && <div>The data has been succesfully updated!</div>}
-                        {catsData && <div>The data has been succesfully updated!</div>}
-                        {dogsData && <div>The data has been succesfully updated!</div>}
-                        {childU8Data && <div>The data has been succesfully updated!</div>}
-                        {childO8Data && <div>The data has been succesfully updated!</div>}
-                        {specReqData && <div>The data has been succesfully updated!</div>}
-                        {shyData && <div>The data has been succesfully updated!</div>}
-                        <p>Delete {data.cat.name} from the database?</p>
-                        <button id='edit-button' onClick={removeCatProfile}>Delete</button><br />
+                        <img src={require(`../../../../assets/cat-pics/${data.cat.image}`).default} alt={data.cat.image}></img>
+                        <p>Delete {data.cat.name} from the database?
+                            <button id='delete-button' onClick={removeCatProfile}>Delete</button></p>
                         <p>OR</p>
+                        <p>Update {data.cat.name}'s Details</p>
                     </div>
-                    <div id='add-form'>
+                    <div id='edit-form'>
                         <div id='add-box'>
-                            <label>Update {data.cat.name}'s Date of Birth:</label><br />
+                            <label>{data.cat.name}'s Date of Birth:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={dob}
                                 name='dob'
                                 onChange={handleInputChange}
@@ -137,11 +131,12 @@ const EditCat = () => {
                                 placeholder='DD/MM/YYYY'
                             />
                             <button id='edit-button' onClick={updateFormDob}>Update</button>
+                            {dobData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update {data.cat.name}'s Sex:</label><br />
+                            <label>{data.cat.name}'s Sex:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={sex}
                                 name='sex'
                                 onChange={handleInputChange}
@@ -149,11 +144,12 @@ const EditCat = () => {
                                 placeholder='Male/Female'
                             />
                             <button id='edit-button' onClick={updateFormSex}>Update</button>
+                            {sexData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update if {data.cat.name} is shy:</label><br />
+                            <label>Is {data.cat.name} shy:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={shy}
                                 name='shy'
                                 onChange={handleInputChange}
@@ -161,11 +157,12 @@ const EditCat = () => {
                                 placeholder='Yes/No'
                             />
                             <button id='edit-button' onClick={updateFormShy}>Update</button>
+                            {shyData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update if {data.cat.name} is use to other cats:</label><br />
+                            <label>Is {data.cat.name} use to other cats:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={cats}
                                 name='cats'
                                 onChange={handleInputChange}
@@ -173,11 +170,12 @@ const EditCat = () => {
                                 placeholder='Yes/No'
                             />
                             <button id='edit-button' onClick={updateFormOtherCats}>Update</button>
+                            {catsData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update if {data.cat.name} is use to dogs:</label><br />
+                            <label>Is {data.cat.name} use to dogs:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={dogs}
                                 name='dogs'
                                 onChange={handleInputChange}
@@ -185,11 +183,12 @@ const EditCat = () => {
                                 placeholder='Yes/No'
                             />
                             <button id='edit-button' onClick={updateFormDogs}>Update</button>
+                            {dogsData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update if {data.cat.name} is use to children under 8 years old:</label><br />
+                            <label>Is {data.cat.name} use to children under 8 years old:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={childU8}
                                 name='childU8'
                                 onChange={handleInputChange}
@@ -197,11 +196,12 @@ const EditCat = () => {
                                 placeholder='Yes/No'
                             />
                             <button id='edit-button' onClick={updateFormChildU8}>Update</button>
+                            {childU8Data && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update if {data.cat.name} is use to children between 8 to 13 years old:</label><br />
+                            <label>Is {data.cat.name} use to children between 8 to 13 years old:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={child8to13}
                                 name='child8to13'
                                 onChange={handleInputChange}
@@ -209,18 +209,20 @@ const EditCat = () => {
                                 placeholder='Yes/No'
                             />
                             <button id='edit-button' onClick={updateFormChildO8}>Update</button>
+                            {childO8Data && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Update if {data.cat.name}'s special requirements:</label><br />
+                            <label>{data.cat.name}'s special requirements:</label><br/>
                             <input
-                            className='edit-input'
+                                className='edit-input'
                                 value={specialReq}
                                 name='specialReq'
                                 onChange={handleInputChange}
                                 type='text'
-                                placeholder='Yes/No'
+                                placeholder='Enter any special requirements'
                             />
                             <button id='edit-button' onClick={updateFormSpecReq}>Update</button>
+                            {specReqData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                     </div>
                 </div>

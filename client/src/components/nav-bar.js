@@ -39,7 +39,7 @@ function Nav() {
                         <button className='nav-button'><Link to='/login' className='nav-text'>Sign In</Link></button>
                     </li>
                     <li>
-                        <button className='nav-button'><Link to='/signup' className='nav-text'>Sign Up</Link></button>
+                        <button className='nav-button'><Link to='/signup' className='nav-text'>Register</Link></button>
                     </li>
                 </ul>
             );

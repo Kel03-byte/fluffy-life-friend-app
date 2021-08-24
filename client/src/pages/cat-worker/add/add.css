@@ -6,15 +6,16 @@
 }
 
 #add-title {
-    text-align: center;
+    text-align: left;
     font-size: 30px;
     padding-bottom: 20px;
+
 }
 
 #add-form {
     margin: auto;
     padding: auto;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 #add-input {
@@ -41,6 +42,6 @@
 }
 
 #add-button:hover {
-    background-color:  rgba(175, 222, 220, 1);
+    background-color:  rgba(252, 180, 126);
     cursor: pointer;
 }

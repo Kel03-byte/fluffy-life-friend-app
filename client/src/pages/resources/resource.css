@@ -11,10 +11,20 @@
     margin-bottom: 60px;
 }
 
+#nav-link {
+    text-decoration: none;
+    color:  rgb(78, 74, 74);
+    padding: 10px;
+}
+
+#nav-link:hover {
+    color: rgba(252, 180, 126);
+}
+
 #card {
     margin: auto;
     padding: auto;
-    width: 350px;
+    width: 400px;
     text-align: center;
 }
 
@@ -29,9 +39,6 @@
 
 #card-list {
     display: block;
-}
-
-#card-list li {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }

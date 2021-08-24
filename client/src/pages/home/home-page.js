@@ -6,7 +6,7 @@ import Img1 from '../../assets/images/1.jpg';
 import Img2 from '../../assets/images/2.jpg';
 import Img3 from '../../assets/images/3.jpg';
 import Img4 from '../../assets/images/4.jpg';
-import Img5 from '../../assets/images/5.png';
+import Img5 from '../../assets/images/icon.png';
 
 export default function Home() {
     return (
@@ -18,11 +18,11 @@ export default function Home() {
                 <img id='home-pic-three' alt='cat laying on bed' src={Img3}></img>
                 <img id='home-pic-four' alt='three kittens on a cat scratcher' src={Img4}></img>
                 <div id='home-text'>
-                    <p>Here at Fluffy Life Friends, we believe that
+                    <p>Here at Fluffy Friends, we believe that
                         our voiceless friends deserve a wonderful, healthy and happy life
-                        and these adorable animals are a lifetime commitment!</p>
-                    <p>If you ready for a lifetime of fun and uncondtional love then check
-                        some of our furry friends we have available by clicking on "Cats"
+                        and these adorable animals are a lifetime companion!</p>
+                    <p>Ready for a lifetime of fun and uncondtional love then check out
+                        some of our furry friends by clicking on "Cats"
                     </p>
                     <br />
                     <p>If you are a Cat Shelter Worker then you can log in or sign up to the site through the links above!</p>

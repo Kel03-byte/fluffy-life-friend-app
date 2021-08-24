@@ -80,11 +80,12 @@ const AddCat = () => {
             {data && <div id='add-message'>The Cat's details have been added!</div>}
             {error && <div id='add-message'>Please Enter The Cat's Details</div>}
             <div id='add-page'>
-                <div id='add-title'>Add details of the cat to the system</div>
+                
                 <div>
                     <form id='add-form'>
+                        <div id='add-title'>Add Cat Details</div>
                         <div id='add-box'>
-                            <label>What is the name of The Cat?</label><br />
+                            <label>Name of The Cat?</label><br />
                             <input
                                 id='add-input'
                                 value={catName}
@@ -95,7 +96,7 @@ const AddCat = () => {
                             />
                         </div><br />
                         <div id='add-box'>
-                            <label>What is The Cat's Date of Birth?</label><br />
+                            <label>Cat's Date of Birth?</label><br />
                             <input
                                 id='add-input'
                                 value={dob}
@@ -106,7 +107,7 @@ const AddCat = () => {
                             />
                         </div><br />
                         <div id='add-box'>
-                            <label>What sex is The Cat?</label><br />
+                            <label>Cat's sex?</label><br />
                             <input
                                 id='add-input'
                                 value={sex}
@@ -172,14 +173,14 @@ const AddCat = () => {
                             />
                         </div><br />
                         <div id='add-box'>
-                            <label>Is there any other Special Requirements for this cat? (FIV, Diet, Diabetes, Bonded Pair etc)</label><br />
+                            <label>Special Requirements for this cat?</label><br />
                             <input
                                 id='add-input'
                                 value={specialReq}
                                 name="specialReq"
                                 onChange={handleInputChange}
                                 type="text"
-                                placeholder="Any other special needs?"
+                                placeholder="FIV, Diet, Diabetes, Bonded Pair etc"
                             />
                         </div><br />
                         <button id='add-button' onClick={handleFormSubmit}>Submit</button>
