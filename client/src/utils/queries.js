@@ -13,6 +13,7 @@ query cats {
         childU8
         child8to13
         specialReq
+        image
     }
 }
 `;
@@ -30,7 +31,7 @@ export const QUERY_SINGLE_CAT = gql`
       childU8
       child8to13
       specialReq
+      image
       }
     }
-  
 `;
