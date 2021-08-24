@@ -1,10 +1,10 @@
 // Edit A Single Cat Page
 
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useParams } from 'react-router';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_SINGLE_CAT } from '../../../../utils/queries';
-import { REMOVE_CAT } from '../../../../utils/mutations';
+import { REMOVE_CAT, UPDATE_DOB, UPDATE_SHY, UPDATE_SEX, UPDATE_OTHER_CATS, UPDATE_DOGS, UPDATE_CHILDU8, UPDATE_CHILDO8, UPDATE_SPEC_REQ } from '../../../../utils/mutations';
 import './edit-cat.css'
 
 const EditCat = () => {
@@ -14,32 +14,219 @@ const EditCat = () => {
         variables: { catId: catId }
     })
 
-    const [removeCat, { data: removeData, error: removeError }] = useMutation(REMOVE_CAT);
+    const [dob, setDob] = useState('');
+    const [sex, setSex] = useState('');
+    const [shy, setShy] = useState('');
+    const [cats, setCats] = useState('');
+    const [dogs, setDogs] = useState('');
+    const [childU8, setChildU8] = useState('');
+    const [child8to13, setChildO8] = useState('');
+    const [specialReq, setSpecReq] = useState('');
 
+    const [removeCat, { data: removeData, error: removeError }] = useMutation(REMOVE_CAT);
+    const [updateDob, { data: dobData }] = useMutation(UPDATE_DOB);
+    const [updateSex, { data: sexData }] = useMutation(UPDATE_SEX);
+    const [updateShy, { data: shyData }] = useMutation(UPDATE_SHY);
+    const [updateOtherCats, { data: catsData }] = useMutation(UPDATE_OTHER_CATS);
+    const [updateDogs, { data: dogsData }] = useMutation(UPDATE_DOGS);
+    const [updateChildU8, { data: childU8Data }] = useMutation(UPDATE_CHILDU8);
+    const [updateChild8to13, { data: childO8Data }] = useMutation(UPDATE_CHILDO8);
+    const [updateSpecialReq, { data: specReqData }] = useMutation(UPDATE_SPEC_REQ)
 
     const removeCatProfile = async (event) => {
         event.preventDefault()
-        removeCat({
-            variables: { catId: catId }
-        })
+        removeCat({ variables: { catId: catId } })
     };
 
+    const updateFormDob = async (event) => {
+        event.preventDefault()
+        updateDob({ variables: { catId: catId, dob: dob } })
+    }
+
+    const updateFormSex = async (event) => {
+        event.preventDefault()
+        updateSex({ variables: { catId: catId, sex: sex } })
+    }
+
+    const updateFormShy = async (event) => {
+        event.preventDefault()
+        updateShy({ variables: { catId: catId, shy: shy } })
+    }
+
+    const updateFormOtherCats = async (event) => {
+        event.preventDefault()
+        updateOtherCats({ variables: { catId: catId, otherCats: cats } })
+    }
+
+    const updateFormDogs = async (event) => {
+        event.preventDefault()
+        updateDogs({ variables: { catId: catId, dogs: dogs } })
+    }
+
+    const updateFormChildU8 = async (event) => {
+        event.preventDefault()
+        updateChildU8({ variables: { catId: catId, childU8: childU8 } })
+    }
+
+    const updateFormChildO8 = async (event) => {
+        event.preventDefault()
+        updateChild8to13({ variables: { catId: catId, child8to13: child8to13 } })
+    }
+
+    const updateFormSpecReq = async (event) => {
+        event.preventDefault()
+        updateSpecialReq({ variables: { catId: catId, specialReq: specialReq } })
+    }
+
+    const handleInputChange = (event) => {
+        let target = event.target;
+        let inputType = target.name;
+        let inputValue = target.value;
+
+        if (inputType === 'dob') {
+            setDob(inputValue);
+        } else if (inputType === 'sex') {
+            setSex(inputValue);
+        } else if (inputType === 'shy') {
+            setShy(inputValue);
+        } else if (inputType === 'cats') {
+            setCats(inputValue)
+        } else if (inputType === 'dogs') {
+            setDogs(inputValue)
+        } else if (inputType === 'childU8') {
+            setChildU8(inputValue)
+        } else if (inputType === 'child8to13') {
+            setChildO8(inputValue)
+        } else if (inputType === 'specialReq') {
+            setSpecReq(inputValue)
+        }
+    };
 
     return (
         <main>{loading ? (
             <div>Loading...</div>
         ) : (
-            <Fragment>
-                <div id='edit-cat-page'><br />
-                    <p id='edit-cat-title'>Delete {data.cat.name}</p>
-                    {removeError && <div>{removeError.message}</div>}
-                    {removeData && <div>The cat has been succesfully removed!</div>}
-                    {error && <div>{error.message}</div>}
-                    <p>Delete {data.cat.name} from the database?</p>
-                    <button id='edit-button' onClick={removeCatProfile}>Delete</button>
+            <Fragment >
+                <div id='edit-cat-page'>
+                    <div>
+                        <p id='edit-cat-title'>Update/Delete {data.cat.name}</p>
+                        {error && <div>{error.message}</div>}
+                        {removeError && <div>{removeError.message}</div>}
+                        {removeData && <div>The cat has been succesfully removed!</div>}
+                        {dobData && <div>The data has been succesfully updated!</div>}
+                        {sexData && <div>The data has been succesfully updated!</div>}
+                        {catsData && <div>The data has been succesfully updated!</div>}
+                        {dogsData && <div>The data has been succesfully updated!</div>}
+                        {childU8Data && <div>The data has been succesfully updated!</div>}
+                        {childO8Data && <div>The data has been succesfully updated!</div>}
+                        {specReqData && <div>The data has been succesfully updated!</div>}
+                        {shyData && <div>The data has been succesfully updated!</div>}
+                        <p>Delete {data.cat.name} from the database?</p>
+                        <button id='edit-button' onClick={removeCatProfile}>Delete</button><br />
+                        <p>OR</p>
+                    </div>
+                    <div id='add-form'>
+                        <div id='add-box'>
+                            <label>Update {data.cat.name}'s Date of Birth:</label><br />
+                            <input
+                            className='edit-input'
+                                value={dob}
+                                name='dob'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='DD/MM/YYYY'
+                            />
+                            <button id='edit-button' onClick={updateFormDob}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update {data.cat.name}'s Sex:</label><br />
+                            <input
+                            className='edit-input'
+                                value={sex}
+                                name='sex'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Male/Female'
+                            />
+                            <button id='edit-button' onClick={updateFormSex}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update if {data.cat.name} is shy:</label><br />
+                            <input
+                            className='edit-input'
+                                value={shy}
+                                name='shy'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Yes/No'
+                            />
+                            <button id='edit-button' onClick={updateFormShy}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update if {data.cat.name} is use to other cats:</label><br />
+                            <input
+                            className='edit-input'
+                                value={cats}
+                                name='cats'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Yes/No'
+                            />
+                            <button id='edit-button' onClick={updateFormOtherCats}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update if {data.cat.name} is use to dogs:</label><br />
+                            <input
+                            className='edit-input'
+                                value={dogs}
+                                name='dogs'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Yes/No'
+                            />
+                            <button id='edit-button' onClick={updateFormDogs}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update if {data.cat.name} is use to children under 8 years old:</label><br />
+                            <input
+                            className='edit-input'
+                                value={childU8}
+                                name='childU8'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Yes/No'
+                            />
+                            <button id='edit-button' onClick={updateFormChildU8}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update if {data.cat.name} is use to children between 8 to 13 years old:</label><br />
+                            <input
+                            className='edit-input'
+                                value={child8to13}
+                                name='child8to13'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Yes/No'
+                            />
+                            <button id='edit-button' onClick={updateFormChildO8}>Update</button>
+                        </div><br />
+                        <div id='add-box'>
+                            <label>Update if {data.cat.name}'s special requirements:</label><br />
+                            <input
+                            className='edit-input'
+                                value={specialReq}
+                                name='specialReq'
+                                onChange={handleInputChange}
+                                type='text'
+                                placeholder='Yes/No'
+                            />
+                            <button id='edit-button' onClick={updateFormSpecReq}>Update</button>
+                        </div><br />
+                    </div>
                 </div>
-            </Fragment>)}
-            <br /></main>
+            </Fragment>)
+        }
+            <br /></main >
     );
 };
 

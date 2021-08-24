@@ -5,9 +5,9 @@ import { useMutation } from '@apollo/client';
 import { ADD_CAT } from '../../../utils/mutations';
 import './add.css';
 
-export default function AddCat() {
+const AddCat = () => {
 
-    const [addCat, { data, error }] = useMutation(ADD_CAT)
+    const [addCat, { data, error }] = useMutation(ADD_CAT);
 
     const [catName, setCatName] = useState('');
     const [dob, setDob] = useState('');
@@ -60,10 +60,10 @@ export default function AddCat() {
                     child8to13: child8to13,
                     specialReq: specialReq,
                 },
-            })
+            });
         } catch (error) {
             console.log(error.message);
-        }
+        };
         setCatName('');
         setDob('');
         setCats('');
@@ -189,3 +189,5 @@ export default function AddCat() {
         </Fragment>
     );
 };
+
+export default AddCat;

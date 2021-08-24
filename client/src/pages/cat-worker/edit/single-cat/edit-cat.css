@@ -12,9 +12,17 @@
     font-size: 30px;
 }
 
+.edit-input {
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    margin-right: 30px;
+}
+
 #edit-button {
     height: 30px;
-    width: 200px;
+    width: 80px;
     border-radius: 10px;
     outline: none;
     border: none;
