@@ -19,6 +19,7 @@ const typeDefs = gql`
         childU8: String!
         child8to13: String!
         specialReq: String!
+        image: String
     }
     
     type Auth {
@@ -34,7 +35,9 @@ const typeDefs = gql`
     
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
+
         login(email: String!, password: String!): Auth
+
         addCat(
             name: String!
             dob: String!
@@ -45,19 +48,49 @@ const typeDefs = gql`
             childU8: String!
             child8to13: String!
             specialReq: String!
+            image: String
         ): Cat
-        updateCat(
-            catId: ID!,
-            name: String!
-            dob: String!
-            sex: String!
-            shy: String!
-            otherCats: String!
-            dogs: String!
-            childU8: String!
-            child8to13: String!
-            specialReq: String!
+
+        updateDob(
+            catId: ID!
+            dob: String
         ): Cat
+
+        updateSex(
+            catId: ID!
+            sex: String
+        ): Cat
+
+        updateShy(
+            catId: ID!
+            shy: String
+        ): Cat
+
+        updateOtherCats(
+            catId: ID!
+            otherCats: String
+        ): Cat
+
+        updateDogs(
+            catId: ID!
+            dogs: String
+        ): Cat
+
+        updateChildU8(
+            catId: ID!
+            childU8: String
+        ): Cat
+
+        updateChild8to13(
+            catId: ID!
+            child8to13: String
+        ): Cat
+
+        updateSpecialReq(
+            catId: ID!
+            specialReq: String
+        ): Cat
+
         removeCat(catId: ID!): Cat
     }
 `;

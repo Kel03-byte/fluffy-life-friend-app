@@ -37,11 +37,32 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addCat: async (_, { name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq }) => {
-            return Cat.create({ name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq })
+        addCat: async (_, { name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq, image }) => {
+            return Cat.create({ name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq, image })
         },
-        updateCat: async (_, { catId, name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq }) => {
-            return await Cat.findOneAndUpdate({ _id: catId }, { name, dob, sex, shy, otherCats, dogs, childU8, child8to13, specialReq }, { new: true })
+        updateDob: async (_, { catId, dob }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { dob }, { new: true })
+        },
+        updateSex: async (_, { catId, sex }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { sex }, { new: true })
+        },
+        updateShy: async (_, { catId, shy }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { shy }, { new: true })
+        },
+        updateOtherCats: async (_, { catId, otherCats}) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { otherCats}, { new: true })
+        },
+        updateDogs: async (_, { catId, dogs }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { dogs }, { new: true })
+        },
+        updateChildU8: async (_, { catId, childU8}) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { childU8 }, { new: true })
+        },
+        updateChild8to13: async (_, { catId, child8to13 }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { child8to13 }, { new: true })
+        },
+        updateSpecialReq: async (_, { catId, specialReq }) => {
+            return await Cat.findOneAndUpdate({ _id: catId }, { specialReq }, { new: true })
         },
         removeCat: async (_, { catId }) => {
             return await Cat.findByIdAndDelete(catId);

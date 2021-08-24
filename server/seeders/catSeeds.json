@@ -9,7 +9,7 @@
         "childU8": "No",
         "child8to13": "No",
         "specialReq": "Ladies only man!",
-        "image":"/assets/images/sooty.jpg"
+        "image":"sooty.jpg"
     },
     {
         "name": "Amy",
@@ -21,7 +21,7 @@
         "childU8": "Yes",
         "child8to13": "Yes",
         "specialReq": "None",
-        "image":"/assets/images/amy.jpg"
+        "image":"amy.jpg"
     },
     {
         "name": "Thor",
@@ -33,7 +33,7 @@
         "childU8": "Yes",
         "child8to13": "Yes",
         "specialReq": "Indoor Only",
-        "image":"/assets/images/thor.jpg"
+        "image":"thor.jpg"
     },
     {
         "name": "Puddles",
@@ -45,7 +45,7 @@
         "childU8": "No",
         "child8to13": "No",
         "specialReq": "None",
-        "image": "/assets/images/puddles.jpg"
+        "image": "puddles.jpg"
     },
     {
         "name": "Timmy",
@@ -57,7 +57,7 @@
         "childU8": "No",
         "child8to13": "Yes",
         "specialReq": "Smooch bug!",
-        "image":"/assets/images/timmy.jpg"
+        "image":"timmy.jpg"
     },
     {
         "name": "Midnight",
@@ -69,6 +69,6 @@
         "childU8": "Yes",
         "child8to13": "Yes",
         "specialReq": "Real little character",
-        "image":"/assets/images/midnight.jpg"
+        "image":"midnight.jpg"
     }
 ]
