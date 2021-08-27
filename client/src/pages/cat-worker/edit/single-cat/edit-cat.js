@@ -199,7 +199,7 @@ const EditCat = () => {
                             {childU8Data && <div>The data has been succesfully updated!</div>}
                         </div><br />
                         <div id='add-box'>
-                            <label>Is {data.cat.name} use to children between 8 to 13 years old:</label><br/>
+                            <label>Is {data.cat.name} use to children aged 8 to 13 years:</label><br/>
                             <input
                                 className='edit-input'
                                 value={child8to13}

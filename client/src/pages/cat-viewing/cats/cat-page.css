@@ -3,6 +3,10 @@
     margin: 10px;
     color: white;
     font-weight: bold;
+    background-color:#A5C6EF;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 #cats-title {
@@ -17,6 +21,7 @@
 }
 
 img {
+    border-radius: 20px;
     width: 500px;
     height: 300px;
 }

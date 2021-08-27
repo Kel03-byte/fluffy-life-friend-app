@@ -3,6 +3,10 @@
     margin: 10px;
     color: white;
     font-weight: bold;
+    background-color:rgb(128, 167, 173) ;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 #add-title {

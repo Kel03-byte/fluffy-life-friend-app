@@ -27,7 +27,7 @@ export default function Resource() {
                         and give your fluffy family member a way to safely expore outside!
                     </div>
                     <ul id='card-list'>
-                        <li><a id='nav-link' href='https://www.facebook.com/groups/279644759164166/'><i className='fab fa-facebook-square'></i> Cat Enclosure WA</a></li>
+                        <li><a id='nav-link' href='https://www.facebook.com/groups/279644759164166/'><i className='fab fa-facebook-square'></i> Cat Enclosure WA Facebook</a></li>
                     </ul>
                 </div>
             </div><br />

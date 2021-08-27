@@ -26,13 +26,13 @@ const Single = () => {
                 <p>DOB: {data.cat.dob}</p>
                 <p>Sex: {data.cat.sex}</p><br />
                 <p>Use to other Cats? </p>
-                <p>{data.cat.otherCats}!</p><br />
+                <p>{data.cat.otherCats}</p><br />
                 <p>Use to Dogs?</p>
-                <p>{data.cat.dogs}!</p><br />
+                <p>{data.cat.dogs}</p><br />
                 <p>Suitable in a home children under 8?</p>
-                <p>{data.cat.childU8}!</p><br />
+                <p>{data.cat.childU8}</p><br />
                 <p>Suitable in a home children between 8 and 13?</p>
-                <p>{data.cat.child8to13}!</p><br />
+                <p>{data.cat.child8to13}</p><br />
                 <p>Any other special requirements?</p>
                 <p>{data.cat.specialReq}</p>
                 <br />
@@ -40,7 +40,7 @@ const Single = () => {
                 <p>Then make an appointment with Armadale Community Animal Rescue Group!</p>
                 <p><a id='nav-text' href='https://www.facebook.com/ArmadaleCommunityAnimalRescueGroup?ref=ts&fref=ts'><i className='fab fa-facebook-square'></i> Facebook</a></p>
                 <p><a id='nav-text' href="mailto:acarg@iinet.net.au"><i className='fas fa-envelope'></i> Email</a></p>
-                <p> or call on 9399 4906</p>
+                <p> or call on 9399 4906</p><br/>
             </div>
         </Fragment>
     );

@@ -1,6 +1,7 @@
 #home-page {
     min-height: 600px;
     margin: 10px;
+    background-color:#A5C6EF;
 }
 
 #home-title {
@@ -35,15 +36,21 @@
 }
 
 #home-pic-five {
+    display: none;
+}
+
+#home-pic-six {
     position: relative;
-    left: 30px;
-    width: 300px;
+    border-radius: 10px;
+    left: 20px;
+    width: 350px;
     height: 200px;
 }
 
 @media screen and (min-width: 700px) {
     #home-pic-one {
         display: block;
+        border-radius: 10px;
         width: 120px;
         height: 120px;
         position: absolute;
@@ -54,6 +61,7 @@
 
     #home-pic-two {
         display: block;
+        border-radius: 10px;
         width: 120px;
         height: 120px;
         position: absolute;
@@ -64,6 +72,7 @@
 
     #home-pic-three {
         display: block;
+        border-radius: 10px;
         width: 120px;
         height: 120px;
         position: absolute;
@@ -74,12 +83,26 @@
 
     #home-pic-four {
         display: block;
+        border-radius: 10px;
         width: 120px;
         height: 120px;
         position: absolute;
         top: 450px;
         right: 5%;
         transform: rotate(10deg);
+    }
+
+    #home-pic-five {
+        display: block;
+        border-radius: 10px;
+        position: relative;
+        left: 30px;
+        width: 300px;
+        height: 200px;
+    }
+
+    #home-pic-six {
+        display: none;
     }
 }
 
@@ -90,7 +113,6 @@
     }
 
     #home-pic-two {
-        display: block;
         width: 200px;
         height: 200px;
         top: 500px;

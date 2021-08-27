@@ -7,6 +7,7 @@ import Img2 from '../../assets/images/2.jpg';
 import Img3 from '../../assets/images/3.jpg';
 import Img4 from '../../assets/images/4.jpg';
 import Img5 from '../../assets/images/icon.png';
+import Img6 from '../../assets/images/6.jpg';
 
 export default function Home() {
     return (
@@ -27,6 +28,7 @@ export default function Home() {
                     <br />
                     <p>If you are a Cat Shelter Worker then you can log in or sign up to the site through the links above!</p>
                     <img id='home-pic-five' alt='black cat icon' src={Img5}></img>
+                    <img id='home-pic-six' alt='cat lying on bed' src={Img6}></img>
                 </div>
             </div>
         </Fragment>
