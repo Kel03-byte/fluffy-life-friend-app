@@ -24,7 +24,7 @@ const Cats = () => {
             <div id='cats-page'>
                 <div id='cats-title'>Meet Our Wonderful Cats!</div><br />
                 <CatList cats={data.cats} />
-            </div>
+            </div><br />
         </Fragment>
     );
 };

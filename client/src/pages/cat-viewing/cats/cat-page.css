@@ -10,7 +10,8 @@
 }
 
 #cats-title {
-    font-size: 40px;
+    padding: 20px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -22,7 +23,7 @@
 
 img {
     border-radius: 20px;
-    width: 500px;
+    width: 350px;
     height: 300px;
 }
 
@@ -33,4 +34,15 @@ img {
 
 #nav-text:hover {
     color: rgba(252, 180, 126);
+}
+
+@media screen and (min-width: 700px) {
+    img {
+        width: 500px;
+        height: 300px;
+    }
+
+    #cats-title {
+        font-size: 40px;
+    }
 }

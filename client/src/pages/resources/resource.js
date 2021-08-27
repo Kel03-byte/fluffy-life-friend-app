@@ -29,7 +29,7 @@ export default function Resource() {
                     <ul id='card-list'>
                         <li><a id='nav-link' href='https://www.facebook.com/groups/279644759164166/'><i className='fab fa-facebook-square'></i> Cat Enclosure WA Facebook</a></li>
                     </ul>
-                </div>
+                </div><br />
             </div><br />
         </Fragment>
     );

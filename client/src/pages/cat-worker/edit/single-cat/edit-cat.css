@@ -10,11 +10,12 @@
 }
 
 #edit-cat-title {
+    padding-top: 20px;
     font-size: 30px;
 }
 
 #edit-form {
-    width: 400px;
+    width: 380px;
     text-align: left;
     padding: auto;
     margin: auto;
@@ -29,7 +30,7 @@
 }
 
 #edit-button {
-    margin-left: 120px;
+    margin-left: 100px;
     height: 30px;
     width: 80px;
     border-radius: 10px;
@@ -62,4 +63,10 @@
 #delete-button:hover {
     background-color:  rgba(252, 180, 126);
     cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+    #edit-cat-title {
+        font-size: 40px;
+    }
 }

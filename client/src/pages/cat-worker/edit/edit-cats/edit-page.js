@@ -19,7 +19,7 @@ const EditPage = () => {
             <div id='edit-page'>
             <div id='edit-title'>Click on the cat that you are wanting to update or delete!</div><br/>
             <EditList cats={data.cats} />
-            </div>
+            </div><br/>
         </Fragment>
     );
 };

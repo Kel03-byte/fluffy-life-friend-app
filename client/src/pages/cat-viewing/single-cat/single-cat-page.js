@@ -41,7 +41,7 @@ const Single = () => {
                 <p><a id='nav-text' href='https://www.facebook.com/ArmadaleCommunityAnimalRescueGroup?ref=ts&fref=ts'><i className='fab fa-facebook-square'></i> Facebook</a></p>
                 <p><a id='nav-text' href="mailto:acarg@iinet.net.au"><i className='fas fa-envelope'></i> Email</a></p>
                 <p> or call on 9399 4906</p><br/>
-            </div>
+            </div><br />
         </Fragment>
     );
 };

@@ -29,8 +29,8 @@ export default function Home() {
                     <p>If you are a Cat Shelter Worker then you can log in or sign up to the site through the links above!</p>
                     <img id='home-pic-five' alt='black cat icon' src={Img5}></img>
                     <img id='home-pic-six' alt='cat lying on bed' src={Img6}></img>
-                </div>
-            </div>
+                </div><br/>
+            </div><br />
         </Fragment>
     );
 };

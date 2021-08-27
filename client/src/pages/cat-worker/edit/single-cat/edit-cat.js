@@ -225,7 +225,7 @@ const EditCat = () => {
                             {specReqData && <div>The data has been succesfully updated!</div>}
                         </div><br />
                     </div>
-                </div>
+                </div><br/>
             </Fragment>)
         }
             <br /></main >

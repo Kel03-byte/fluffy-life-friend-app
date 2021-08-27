@@ -27,7 +27,11 @@
   
   /* Color/shape of close button cross */
   .bm-cross {
-    background: #bdc3c7;
+    background: white;
+  }
+
+  .bm-cross-button:hover {
+    background: rgba(252, 180, 126);
   }
   
   /*
