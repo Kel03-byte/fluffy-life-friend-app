@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header>
             <img id='logo' src={logo} alt=' cat logo'></img>
-            <div>Fluffy Friends!</div>
+            <div id='header-title'>Fluffy Friends!</div>
         </header>
     );
 };

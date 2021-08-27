@@ -2,6 +2,7 @@
 
 import './App.css';
 import Nav from './components/nav-bar'
+import SideBar from './components/side-bar'
 import Header from './components/header'
 import Cats from './pages/cat-viewing/cats/cats-page'
 import SignUp from './pages/cat-worker/sign-up/sign-up-page'
@@ -50,6 +51,7 @@ function App() {
             <Router>
                 <Header />
                 <Nav />
+                <SideBar />
                 <Switch>
                     <Route exact path="/" component={Home}></Route>
                     <Route exact path="/cats" component={Cats}></Route>
