@@ -37,7 +37,7 @@ Otherwise just click on the 'deployed website' link in the Links Section to use 
 ## Usage
 
 * People can view a list of Adpotable Cats and their details by clicking on the "Cats" button!
-* Shelter Workers can sign up/in to add or delete a cat from the database!
+* Shelter Workers can sign up/in to add, update or delete a cat from the database!
 
 ## Links
 
@@ -48,7 +48,7 @@ Otherwise just click on the 'deployed website' link in the Links Section to use 
 
 * [Press Release](https://docs.google.com/document/d/1_YDwRyGK-HfiYP21BZEY76_JgJwDGi5KjhD2B0wYH8Y/edit)
 * [User Story Map](https://miro.com/app/board/o9J_l4WQGZU=/)
-* [Presentation Slide](https://docs.google.com/presentation/d/1-d7KW7Ukvo6mWeEYrSVWGbmwx9YhkAO2qaJadW2Q7sc/edit#slide=id.ge9da45e10a_0_3)
+* [Presentation Slide](https://docs.google.com/presentation/d/1WeS-ChQq1do9_JSgSSUJVosbPSM4BW0WgJS28PYUOzA/edit#slide=id.p)
 * [Presentation Speech](https://docs.google.com/document/d/15VxTWW9Q8S9dqSRC0XJNoaKpFVTqNDlKDZXQFDytz2c/edit)
 
 ## Screenshots
@@ -57,10 +57,10 @@ Home Page
 ![Home Page](assets/home.png)
 
 Cats Page
-![Cats Page](assets/cats.png)
+![Cats Page](assets/cat-list.png)
 
 Cat Details Page
-![Cat Details Page](assets/details.png)
+![Cat Details Page](assets/cat-single.png)
 
 Resource Page
 ![Resource Page](assets/resources.png)
@@ -72,4 +72,10 @@ Sign In Page
 ![Sign In Page](assets/login.png)
 
 Add A Cat Page
-![Add A Cat Page](assets/add.png)
+![Add A Cat Page](assets/add-cat.png)
+
+Edit Cat List Page
+![Add A Cat Page](assets/edit-list.png)
+
+Edit A Cat Page
+![Add A Cat Page](assets/edit-single.png)

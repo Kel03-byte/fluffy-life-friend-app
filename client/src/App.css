@@ -50,6 +50,11 @@ ul {
     cursor: pointer;
 }
 
+#loading-text {
+    text-align: center;
+    font-size: 25px;
+}
+
 @media screen and (min-width: 700px) {
     ul {
         display: flex;

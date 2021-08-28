@@ -9,13 +9,16 @@ import './cat-page.css';
 const Cats = () => {
     const { loading, error, data } = useQuery(GET_CATS)
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <Fragment>
+                <div id='loading-text'>Loading...</div><br />
+            </Fragment>)
     }
     if (error) {
         console.error(error.message)
         return (
             <Fragment>
-                <div>{error.message}</div>
+                <div id='loading-text'>{error.message}</div>
             </Fragment>
         )
     }

@@ -48,7 +48,7 @@ const typeDefs = gql`
             childU8: String!
             child8to13: String!
             specialReq: String!
-            image: String
+            image: String!
         ): Cat
 
         updateDob(

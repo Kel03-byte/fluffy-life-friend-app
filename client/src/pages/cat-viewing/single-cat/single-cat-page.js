@@ -13,10 +13,18 @@ const Single = () => {
         variables: { catId: catId }
     })
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <Fragment>
+                <div id='loading-text'>Loading...</div><br />
+            </Fragment>)
     }
     if (error) {
         console.error(error.message)
+        return (
+            <Fragment>
+                <div id='loading-text'>{error.message}</div>
+            </Fragment>
+        )
     }
     return (
         <Fragment>
@@ -40,7 +48,7 @@ const Single = () => {
                 <p>Then make an appointment with Armadale Community Animal Rescue Group!</p>
                 <p><a id='nav-text' href='https://www.facebook.com/ArmadaleCommunityAnimalRescueGroup?ref=ts&fref=ts'><i className='fab fa-facebook-square'></i> Facebook</a></p>
                 <p><a id='nav-text' href="mailto:acarg@iinet.net.au"><i className='fas fa-envelope'></i> Email</a></p>
-                <p> or call on 9399 4906</p><br/>
+                <p> or call on 9399 4906</p><br />
             </div><br />
         </Fragment>
     );

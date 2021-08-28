@@ -9,7 +9,7 @@ import './sign-in.css';
 const SignIn = () => {
     const [formState, setFormState] = useState({ email: '', password: '' });
 
-    const [login] = useMutation(LOGIN_USER);
+    const [login, { error }] = useMutation(LOGIN_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -39,6 +39,7 @@ const SignIn = () => {
         <Fragment>
             <div id='login-page'>
                 <div id='login-title'>Sign In</div><br />
+                {error && <div id='add-message'>{error.message}</div>}
                 <form id='login-form'>
                     <div>
                         <label>Enter Your Email</label><br />

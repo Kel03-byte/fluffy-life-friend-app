@@ -8,7 +8,7 @@ import './sign-up.css';
 
 const SignUp = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
-    const [addUser] = useMutation(ADD_USER);
+    const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -39,6 +39,7 @@ const SignUp = () => {
         <Fragment>
             <div id='signup-page'>
                 <div id='signup-title'>Register for the site</div><br />
+                {error && <div id='add-message'>{error.message}</div>}
                 <form id='signup-form'>
                     <div>
                         <label>Enter a User Name</label><br />

@@ -25,6 +25,7 @@ mutation addCat(
   $childU8: String!
   $child8to13: String!
   $specialReq: String!
+  $image: String!
   ) {
     addCat(
       name: $name,
@@ -36,6 +37,7 @@ mutation addCat(
       childU8: $childU8,
       child8to13: $child8to13,
       specialReq: $specialReq,
+      image: $image
       ) {
         _id
         name
@@ -47,6 +49,7 @@ mutation addCat(
         childU8
         child8to13
         specialReq
+        image
     }
   }
 `;

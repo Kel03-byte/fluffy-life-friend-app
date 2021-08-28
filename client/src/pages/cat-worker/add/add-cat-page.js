@@ -18,6 +18,7 @@ const AddCat = () => {
     const [childU8, setChildU8] = useState('');
     const [child8to13, setChild8t13] = useState('');
     const [specialReq, setSpecReq] = useState('');
+    const [image, setImage] = useState('')
 
     const handleInputChange = (event) => {
         let target = event.target;
@@ -42,6 +43,8 @@ const AddCat = () => {
             setChild8t13(inputValue);
         } else if (inputType === 'specialReq') {
             setSpecReq(inputValue);
+        } else if (inputType === 'image') {
+            setImage(inputValue)
         }
     };
 
@@ -59,6 +62,7 @@ const AddCat = () => {
                     childU8: childU8,
                     child8to13: child8to13,
                     specialReq: specialReq,
+                    image: image,
                 },
             });
         } catch (error) {
@@ -74,13 +78,12 @@ const AddCat = () => {
         setSex('');
         setSpecReq('');
     };
-    
+
     return (
         <Fragment>
-            {data && <div id='add-message'>The Cat's details have been added!</div>}
-            {error && <div id='add-message'>Please Enter The Cat's Details</div>}
             <div id='add-page'>
-                
+                {data && <div id='add-message'>The Cat's details have been added!</div>}
+                {error && <div id='add-message'>Please Enter The Cat's Details</div>}
                 <div>
                     <form id='add-form'>
                         <div id='add-title'>Add Cat Details</div>
@@ -181,6 +184,17 @@ const AddCat = () => {
                                 onChange={handleInputChange}
                                 type="text"
                                 placeholder="FIV, Diet, Diabetes, Bonded Pair etc"
+                            />
+                        </div><br />
+                        <div id='add-box'>
+                            <label>What is the file name of the picture of the cat?</label><br />
+                            <input
+                                id='add-input'
+                                value={image}
+                                name="image"
+                                onChange={handleInputChange}
+                                type="text"
+                                placeholder="image.jpg etc"
                             />
                         </div><br />
                         <button id='add-button' onClick={handleFormSubmit}>Submit</button>
