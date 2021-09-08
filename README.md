@@ -17,7 +17,7 @@ This awesome App showcases the wonderful cats that are up for adoption!
 
 This app uses:
 - React
-- GrapgQL
+- GraphQL
 - MongodDB
 - JWT
 - Apollo
